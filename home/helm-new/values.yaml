@@ -1,0 +1,19 @@
+app:
+  project: deploy-elibrary
+  tier: application
+
+image:
+  repository: educative1
+  tag: deploy_elibrary:deploy
+
+deployments: 
+  containerName: application
+  containerPort: 3000
+  imagePullPolicy: Always
+  replicas: 1
+
+service:
+  type: NodePort
+  port: 3000         
+  targetPort: 3000
+  nodePort: 31111
